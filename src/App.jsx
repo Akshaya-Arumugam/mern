@@ -1,21 +1,23 @@
-import { Button } from "flowbite-react";
-function App() {
+import React from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Home from './Pages/Home'
+import About from './Pages/About'
+import SignIn from './Pages/SignIn'
+import SignUp from './Pages/SignUp'
+import Dashboard from './Pages/Dashboard'
+import Projects from './Pages/Projects'
+
+export default function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-
-
-    <Button className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white hover:bg-gradient-to-br focus:ring-blue-300 dark:focus:ring-blue-800">
-        Blue
-      </Button>
-
-      <Button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:bg-gradient-to-l focus:ring-purple-200 dark:focus:ring-purple-800">
-        Purple to Pink
-      </Button>
-    </>
-  );
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/signin' element={<SignIn/>}/>
+      <Route path='/signup' element={<SignUp/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/projects' element={<Projects/>}/>
+    </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;
